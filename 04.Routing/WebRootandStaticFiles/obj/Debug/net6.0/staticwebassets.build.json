@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "vYLsUAb7FF1LVlyPl/tFmTOHpV6xwMsEQF5tMq+2vq8=",
+  "Source": "WebRootandStaticFiles",
+  "BasePath": "_content/WebRootandStaticFiles",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebRootandStaticFiles\\wwwroot",
+      "Source": "WebRootandStaticFiles",
+      "ContentRoot": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\",
+      "BasePath": "_content/WebRootandStaticFiles",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\Capture.png",
+      "SourceId": "WebRootandStaticFiles",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\",
+      "BasePath": "_content/WebRootandStaticFiles",
+      "RelativePath": "Capture.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Capture.png"
+    },
+    {
+      "Identity": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\TextFile.txt",
+      "SourceId": "WebRootandStaticFiles",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\",
+      "BasePath": "_content/WebRootandStaticFiles",
+      "RelativePath": "TextFile.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\TextFile.txt"
+    },
+    {
+      "Identity": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\XML.pdf",
+      "SourceId": "WebRootandStaticFiles",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\AspDotNetCore\\04.Routing\\WebRootandStaticFiles\\wwwroot\\",
+      "BasePath": "_content/WebRootandStaticFiles",
+      "RelativePath": "XML.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\XML.pdf"
+    }
+  ]
+}

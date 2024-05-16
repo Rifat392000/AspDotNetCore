@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "h6k0FK632KpoTgaOa/M6UEq5CJqqH/Jprmk7bCQavIQ=",
+  "Source": "MultipleCustomWebRootFolder",
+  "BasePath": "_content/MultipleCustomWebRootFolder",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MultipleCustomWebRootFolder\\wwwroot",
+      "Source": "MultipleCustomWebRootFolder",
+      "ContentRoot": "J:\\AspDotNetCore\\04.Routing\\MultipleCustomWebRootFolder\\wwwroot\\",
+      "BasePath": "_content/MultipleCustomWebRootFolder",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "J:\\AspDotNetCore\\04.Routing\\MultipleCustomWebRootFolder\\wwwroot\\8565752-07-02-Class-A-IP-Addresses.pdf",
+      "SourceId": "MultipleCustomWebRootFolder",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\AspDotNetCore\\04.Routing\\MultipleCustomWebRootFolder\\wwwroot\\",
+      "BasePath": "_content/MultipleCustomWebRootFolder",
+      "RelativePath": "8565752-07-02-Class-A-IP-Addresses.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\8565752-07-02-Class-A-IP-Addresses.pdf"
+    }
+  ]
+}

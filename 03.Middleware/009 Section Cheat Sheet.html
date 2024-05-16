@@ -1,0 +1,69 @@
+<h4>Introduction to Middleware</h4><blockquote><p>Middleware is a component that is assembled into the application pipeline to handle requests and responses.</p><p>Middlewares are chained one-after-other and execute in the same sequence how they're added.</p></blockquote><p><br></p><figure><img src="https://img-b.udemycdn.com/redactor/raw/article_lecture/2022-10-20_16-47-56-835838a4e546e9e2397652e8c6ff8368.png"></figure><p><br></p><figure><img src="https://img-b.udemycdn.com/redactor/raw/article_lecture/2022-10-20_16-47-56-f129d1dc47ec21233ad8f4ff546731d7.png"></figure><p>Middleware can be a request delegate (anonymous method or lambda expression) [or] a class.</p><p><br></p><h4>Middleware - Run</h4><p><strong>app.Run( )</strong></p><pre class="prettyprint linenums">app.Run(async (HttpContext context) =&gt;
+{
+//code
+});</pre><p>The extension method called Run is used to execute a terminating / short-circuiting middleware that doesnt forward the request to the next middleware.</p><p><br></p><h4>Middleware Chain</h4><figure><img src="https://img-b.udemycdn.com/redactor/raw/article_lecture/2022-10-21_15-14-18-9bdce0caa94100bca78cef28712c8a95.png"></figure><p><br></p><p><strong>app.Use( )</strong></p><pre class="prettyprint linenums">app.Use(async (HttpContext context, RequestDelegate next) =&gt;
+{
+  //before logic
+  await next(context);
+  //after logic
+});</pre><p>The extension method called Use is used to execute a non-terminating / short-circuiting middleware that may / may not forward the request to the next middleware.</p><p><br></p><p><br></p><h4>Middleware Class</h4><p>Middleware class is used to separate the middleware logic from a lambda expression to a separate / reusable class.</p><pre class="prettyprint linenums">class MiddlewareClassName : IMiddleware
+{
+  public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+  {
+    //before logic
+    await next(context);
+    //after logic
+  }
+}</pre><p><code>app.UseMiddleware&lt;MiddlewareClassName&gt;();</code></p><p><br></p><h4>Middleware Extensions</h4><pre class="prettyprint linenums">class MiddlewareClassName : IMiddleware
+{
+  public async Task InvokeAsync(HttpContext context,RequestDelegate next)
+  {
+    //before logic
+    await next(context);
+    //after logic
+  }
+});</pre><p><br></p><p>Middleware extension method is used to invoke the middleware with a single method call.</p><pre class="prettyprint linenums">static class ClassName
+{
+  public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
+  {
+    return app.UseMiddleware&lt;MiddlewareClassName&gt;();
+  }
+}</pre><p><code>app.ExtensionMethodName();</code> </p><p><br></p><h4>Conventional Middleware</h4><pre class="prettyprint linenums">class MiddlewareClassName
+{
+  private readonly RequestDelegate _next;
+
+  public MiddlewareClassName(RequestDelegate next)
+  {
+    _next = next;
+  }
+
+  public async Task InvokeAsync(HttpContext context)
+  {
+   //before logic
+   await _next(context);
+   //after logic
+  }
+});</pre><p><br></p><pre class="prettyprint linenums">static class ClassName
+{
+  public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
+  {
+   return app.UseMiddleware&lt;MiddlewareClassName&gt;();
+  }
+}</pre><p><code>app.ExtensionMethodName();</code> </p><p><br></p><p><br></p><h4>The Right Order of Middleware</h4><figure><img src="https://img-b.udemycdn.com/redactor/raw/article_lecture/2022-10-21_15-14-19-214781bd8fcd09070416084d4cce5d38.png"></figure><pre class="prettyprint linenums">app.UseExceptionHandler("/Error");
+app.UseHsts();
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseSession();
+app.MapControllers();
+//add your custom middlewares
+app.Run();</pre><p><br></p><h4>Middleware - UseWhen</h4><figure><img src="https://img-b.udemycdn.com/redactor/raw/article_lecture/2022-10-21_15-14-19-cbf939907743b721dd4a79c65f397b54.png"></figure><p><br></p><p><strong>app.UseWhen( )</strong></p><pre class="prettyprint linenums">app.UseWhen(
+  context =&gt; { return boolean; },
+  app =&gt;
+  {
+    //add your middlewares
+  }
+);</pre><p>The extension method called UseWhen is used to execute a branch of middleware only when the specified condition is true.</p>
